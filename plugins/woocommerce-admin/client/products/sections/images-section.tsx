@@ -42,6 +42,7 @@ export const ImagesSection: React.FC = () => {
 	const [ draggedImageId, setDraggedImageId ] = useState< number | null >(
 		null
 	);
+	const ALLOWED_MEDIA_TYPES = 'image';
 
 	const toggleRemoveZone = () => {
 		setIsRemovingZoneVisible( ! isRemovingZoneVisible );
@@ -174,7 +175,7 @@ export const ImagesSection: React.FC = () => {
 						) : (
 							<CardBody>
 								<FormFileUpload
-									accept="image/*"
+									accept={ ALLOWED_MEDIA_TYPES }
 									multiple={ true }
 									onChange={ ( { currentTarget } ) => {
 										uploadMedia( {
@@ -209,6 +210,9 @@ export const ImagesSection: React.FC = () => {
 											onBlur={ () => {} }
 										>
 											<MediaUploader
+												allowedMediaTypes={ [
+													ALLOWED_MEDIA_TYPES,
+												] }
 												onError={ () => null }
 												onSelect={ ( file ) => {
 													if (
