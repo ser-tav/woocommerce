@@ -240,7 +240,7 @@ export const ImagesSection: React.FC = () => {
 													<>
 														<img
 															src={ DragAndDrop }
-															alt="Completed"
+															alt={ __( 'Completed', 'woocommerce' ) }
 															className="woocommerce-product-form__drag-and-drop-image"
 														/>
 														<span>
